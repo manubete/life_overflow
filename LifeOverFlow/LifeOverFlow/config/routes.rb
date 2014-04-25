@@ -10,6 +10,8 @@ LifeOverFlow::Application.routes.draw do
     resources :answers
   end
 
+  resources :comments
+
   resources :users
   resources :sessions
 end

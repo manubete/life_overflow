@@ -11,3 +11,12 @@
 <% @question.answers.each do |answer| %>
   <div><%= answer.answer_content %></div>
 <% end %>
+
+<h1> Create a Comment Below </h1>
+
+<%= link_to "Create a Comment", new_comment_path(:question_id => @question.id) %>
+
+<h1> Read Some Comments:</h1>
+<% @question.comments.each do |comment| %>
+  <%= comment.comment_content %>
+<%  end %>
