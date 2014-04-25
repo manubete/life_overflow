@@ -8,5 +8,6 @@
   <br><br>
 <% end %>
 
-
-<%= link_to 'Create a Question', new_question_path  %><br><br>
+<% if current_user %>
+<%= button_to 'Create a Question', new_question_path, :method => :get, :class => "btn btn-success" %><br><br>
+<% end  %>

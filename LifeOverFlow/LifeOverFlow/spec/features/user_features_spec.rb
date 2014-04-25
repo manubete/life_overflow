@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Guest users' do
-  context "Guest user can create an account on the site" do
+  context "can create an account on the site" do
     let!(:user) { FactoryGirl.attributes_for :user }
     it "can go to the homepage, sees a Create Account button that leads to a Create Account form" do
       visit root_path
@@ -23,16 +23,17 @@ feature 'Guest users' do
     let(:question) {FactoryGirl.create :question}
     let(:answer) {FactoryGirl.create :answer }
 
-    it "can view questions but not create new question" do
+    it "can view questions but not create a new question" do
       visit root_path
       expect(page).to_not have_content "Create a Question"
     end
 
-    # it 'can view questions and is not able to submit answer' do
+    it "can view questions but not create a new answer" do
+      visit question_path(:id => question.id)
+      expect(page).to_not have_content "Create an Answer"
+    end
 
-    #   visit question_path(:id => question.id) # Check this out
 
-    # end
   end
 end
 

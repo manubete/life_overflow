@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-before_filter :require_login, only: [:new]
+before_filter :require_login, only: [:new, :create]
 
   def index
     @questions = Question.all
@@ -30,7 +30,6 @@ before_filter :require_login, only: [:new]
 
 
   def require_login
-    puts "-------------"
     puts current_user
     unless current_user
       flash[:error] = "You must be logged in to create a question"
