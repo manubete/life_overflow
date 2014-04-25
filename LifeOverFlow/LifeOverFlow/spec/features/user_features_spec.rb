@@ -25,7 +25,7 @@ feature 'Guest users' do
       let(:session) { FactoryGirl.create :session, :id => user.id }
       it "can go to the homepage, clicks on log in and enters his CORRECT credentials and is led to his user page" do
         visit root_path
-        click_on "log in"
+        click_on "Log In"
         fill_in "Email", :with => user.email
         fill_in 'Password', :with => user.password
         click_on "Log in"
