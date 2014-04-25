@@ -5,7 +5,7 @@ feature 'Guest users' do
     let!(:user) { FactoryGirl.attributes_for :user }
     it "can go to the homepage, sees a Create Account button that leads to a Create Account form" do
       visit root_path
-      click_on "Create an Account"
+      click_on "Sign Up"
       expect(page).to have_content "Create an Account Below"
     end
 
