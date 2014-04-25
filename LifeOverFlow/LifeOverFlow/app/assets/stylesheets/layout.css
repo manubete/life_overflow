@@ -5,6 +5,8 @@ body {
   padding: 0;
 }
 
+
+
 .header {
   width: 70%;
   margin: 0 auto;
@@ -16,6 +18,8 @@ body {
   z-index: 10;
   border-radius:15px;
 }
+
+
 
 .main_container {
   width: 70%;
@@ -42,6 +46,14 @@ body {
   text-align:center;
   font-size: 50px;
   margin-bottom: 10px;
+}
+
+#main_logo a {
+  color:black;
+}
+
+#main_logo a:link {
+  text-decoration:none;
 }
 
 #horizontal{

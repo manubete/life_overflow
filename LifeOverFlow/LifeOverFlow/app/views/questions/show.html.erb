@@ -2,10 +2,12 @@
 <h1>Specific Question Page</h1>
 <br>
 <%= @question.question_content %>
-<br>
+<br><br>
 
-<%= link_to 'Answer', new_question_answer_path(@question) %>
-
+<% if current_user %>
+  <%= button_to "Create an Answer", new_question_answer_path(@question), :method => :get, :class => "btn btn-warning" %>
+<% end  %><br>
+<h2>All answers:</h2>
 <% @question.answers.each do |answer| %>
-<div><%= answer.answer_content %></div>
+  <div><%= answer.answer_content %></div>
 <% end %>
