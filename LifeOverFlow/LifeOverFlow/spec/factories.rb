@@ -1,7 +1,5 @@
 FactoryGirl.define do
-  factory :question do
-    question_content { Faker::Lorem.sentence }
-  end
+
 
   factory :user do
     username { "ashwizzle24" }
@@ -12,4 +10,14 @@ FactoryGirl.define do
   factory :session do
     id { }
   end
+
+  factory :question do
+    question_content { Faker::Lorem.sentence }
+  end
+
+  factory :answer do
+    answer_content { Faker::Lorem.sentence }
+    question
+  end
+
 end

@@ -1,5 +1,11 @@
+
 <h1>Specific Question Page</h1>
 <br>
 <%= @question.question_content %>
+<br>
 
+<%= link_to 'Answer', new_question_answer_path(@question) %>
 
+<% @question.answers.each do |answer| %>
+<div><%= answer.answer_content %></div>
+<% end %>
