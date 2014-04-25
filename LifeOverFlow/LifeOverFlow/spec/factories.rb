@@ -3,8 +3,13 @@ FactoryGirl.define do
     question_content { Faker::Lorem.sentence }
   end
 
-  # factory :answer do
-  #   answer_content { Faker::Lorem.sentence }
-  #   question
-  # end
+  factory :user do
+    username { "ashwizzle24" }
+    email { "ash.nkumar@gmail.com" }
+    password { "ashwin" }
+  end
+
+  factory :session do
+    id { }
+  end
 end
