@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+before_filter :require_login, only: [:new]
 
   def index
     @questions = Question.all
@@ -25,6 +26,16 @@ class QuestionsController < ApplicationController
     question = Question.find params[:id]
     question.destroy
     redirect_to root_path
+  end
+
+
+  def require_login
+    puts "-------------"
+    puts current_user
+    unless current_user
+      flash[:error] = "You must be logged in to create a question"
+      redirect_to root_path
+    end
   end
 
 end
