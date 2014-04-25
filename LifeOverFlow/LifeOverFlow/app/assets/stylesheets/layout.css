@@ -1,0 +1,60 @@
+body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 70%;
+  margin: 0 auto;
+  height: 60%;
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
+  background-color: #b3b3b3;
+  z-index: 10;
+  border-radius:15px;
+}
+
+.main_container {
+  width: 70%;
+  margin: 0 auto;
+  height: 600px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #e6e6e6;
+  border-radius:15px;
+}
+
+.header img {
+  max-height: 80px;
+  max-width: 80px;
+  float:left;
+  padding-bottom: 10px;
+}
+
+#user_nav {
+  float:right;
+}
+
+#main_logo {
+  text-align:center;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#horizontal{
+  /*padding: 0;*/
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
+  width: 70%;
+}
+
+.btn.btn-default:focus {
+  background-color:#428bca;
+  color: white;
+}
+

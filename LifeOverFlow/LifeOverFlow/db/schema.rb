@@ -22,4 +22,11 @@ ActiveRecord::Schema.define(:version => 20140425035532) do
     t.string "question_content"
   end
 
+  create_table "users", :force => true do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_hash"
+    t.string "password_salt"
+  end
+
 end

@@ -5,10 +5,53 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+
+  <!-- BOOSTRAP -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+<div class="header">
+  <img src = "http://images.wikia.com/uncyclopedia/images/archive/8/80/20070603184500!Smiley.png">
+  <div id="user_nav">
 
-<%= yield %>
+  <ul class=nav nav-pills nav-stacked>
+    <% if current_user %>
+      <li> <%= link_to "#{current_user.username}", user_path(current_user.id) %></li>
+      <li> <%= button_to "Log out", log_out_path, :class => "btn btn-danger", :method => :get %></li>
+    <% else %>
+      <li> <%= button_to "Sign Up", sign_up_path, :class => "btn btn-success", :method => :get %></li>
+      <li><%= link_to "Log In", log_in_path %></li>
+    <% end %>
+  </ul>
+  </div>
+
+  <div id="main_logo">
+    Life Overflow
+  </div>
+
+
+  <div class="text-center">
+    <em>Order by:</em>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Most UpVotes</button>
+      <button type="button" class="btn btn-default">Most Recent</button>
+      <button type="button" class="btn btn-default">Trending</button>
+    </div>
+  </div>
+
+</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+<hr id = "horizontal">
+
+<div class="main_container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
