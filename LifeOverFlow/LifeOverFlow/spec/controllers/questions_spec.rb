@@ -9,10 +9,25 @@ describe QuestionsController do
   end
 
   context "#new" do
+    let!(:user) { FactoryGirl.create :user }
     it "is successful" do
+      session[:user_id] = 1
       get :new
       expect(response).to be_success
     end
+
+    it "shows a create question form if they are logged in" do
+      session[:user_id] = 1
+      get :new
+      expect(response).to be_success
+    end
+
+    it "redirects a user to log in page if they are not logged in" do
+      session[:user_id] = nil
+      get :new
+      expect(response).to redirect_to root_path
+    end
+
   end
 
   context "#create" do
