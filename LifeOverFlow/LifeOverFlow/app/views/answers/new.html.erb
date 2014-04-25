@@ -1,0 +1,10 @@
+<h1> Create a Answer Below </h1>
+
+<%= form_for [@question, @answer] do |f| %>
+<li>
+  <%= f.label :answer_content %>
+  <%= f.text_field :answer_content %>
+</li>
+<%= f.submit "Submit" %>
+
+<% end %>
