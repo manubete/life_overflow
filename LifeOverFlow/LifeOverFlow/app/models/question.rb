@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  attr_accessible :question_content
+  attr_accessible :question_content, :question_title
 
   validates :question_content, presence: true
   has_many :comments, :as => :commentable
