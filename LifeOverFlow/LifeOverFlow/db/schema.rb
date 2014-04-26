@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(:version => 20140425231521) do
   end
 
   create_table "questions", :force => true do |t|
-    t.string "question_content"
-    t.string "title"
+    t.string   "question_content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "question_title"
   end
 
   create_table "users", :force => true do |t|
