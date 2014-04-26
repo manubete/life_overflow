@@ -10,7 +10,7 @@ var Question = {
   },
 
   appendQuestion: function(event, data) {
-
+    $('#show_questions').append(data)
   }
 }
 
