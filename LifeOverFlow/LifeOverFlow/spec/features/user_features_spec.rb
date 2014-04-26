@@ -33,22 +33,36 @@ feature 'Guest users' do
       expect(page).to_not have_content "Create an Answer"
     end
 
-
   end
 end
 
 feature 'Users' do
   context "User will see his user page only if (and only if) he is logged in" do
     let!(:user) { FactoryGirl.create :user }
-    let(:session) { FactoryGirl.create :session, :id => user.id }
+
+    before(:each) do
+      ApplicationController.any_instance.stub(:current_user).and_return(user)
+      visit root_path
+    end
+
     it "can go to the homepage, clicks on log in and enters his CORRECT credentials and is led to his user page" do
-        visit root_path
-        click_on "Log In"
-        fill_in "Email", :with => user.email
-        fill_in 'Password', :with => user.password
-        click_on "Log in"
         expect(page).to have_content "#{user.username}"
     end
   end
 
+  context "User can see the questions, comments and answers he made, on his homepage" do
+    let!(:user) { FactoryGirl.create :user }
+    let!(:question) { FactoryGirl.create :question, :user_id => user.id }
+    let!(:answer) { FactoryGirl.create :answer, :user_id => user.id, :question_id => question.id }
+    let!(:comment) { FactoryGirl.create :comment, :user_id => user.id, :question_id => question.id }
+
+    before(:each) do
+      ApplicationController.any_instance.stub(:current_user).and_return(user)
+      visit user_path(user)
+    end
+
+    it "can go to his homepage and see the questions that he created" do
+      expect(page).to have_content "#{question.question_title}"
+    end
+  end
 end
