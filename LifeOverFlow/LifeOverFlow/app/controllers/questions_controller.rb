@@ -3,6 +3,7 @@ before_filter :require_login, only: [:new, :create]
 
   def index
     @questions = Question.all
+    @question = Question.new
   end
 
   def show
