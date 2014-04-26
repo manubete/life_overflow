@@ -11,8 +11,9 @@
 <%=link_to "Create a Question", "#", :class => 'new_question' %>
 <% end  %>
 
-<%= form_for @question, :remote => true, :html => {:class => 'hidden'} do |f| %>
+<%= form_for @question, :remote => true, :html => {:class => 'hidden', :class => 'questionform'} do |f| %>
   <%= f.text_field :question_title, size: "98", placeholder: "Title" %>
+  <br>
     <%= f.text_area :question_content, size: "100x12", placeholder: "Content" %>
   <%= f.submit %>
 <% end %>
