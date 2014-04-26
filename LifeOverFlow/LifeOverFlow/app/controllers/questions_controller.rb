@@ -17,9 +17,9 @@ before_filter :require_login, only: [:new, :create]
   def create
     @question = Question.new params[:question]
     if @question.save
-      redirect_to root_path
+      render :partial => 'question', :locals => {:question => @question}
     else
-      render :new
+      render :text => @question.errors.full_messages.join(', '), :status => :unprocessable_entity
     end
   end
 
