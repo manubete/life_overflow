@@ -3,4 +3,5 @@ class Answer < ActiveRecord::Base
 
   validates :answer_content, presence: true
   belongs_to :question
+  has_many :comments, :as => :commentable
 end

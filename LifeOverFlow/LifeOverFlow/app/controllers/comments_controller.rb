@@ -1,25 +1,34 @@
 class CommentsController < ApplicationController
 
   def new
-    #@question = Question.find(params[:question_id])
-    @comment = Comment.new(:commentable_id => params[:question_id])
+    # @question = Question.find(params[:question_id])
+    if params[:question_id]  != nil
+      @comment = Comment.new(:commentable_id => params[:question_id], :commentable_type => "Question")
+    else
+      @comment = Comment.new(:commentable_id => params[:answer_id], :commentable_type => "Answer")
+    end
   end
 
   def create
-    p "#{params}"
-    p "$"*50
-    @question = Question.find(params[:comment][:commentable_id])
-    p "#{@question}"
-     @comment = Comment.new(params[:comment])
-
-     @question.comments << @comment
-     p "#{@comment.commentable_id}"
-    if @comment.save
-      redirect_to question_path(@question)
+    @comment = Comment.new(params[:comment])
+    if @comment.commentable_type == "Question"
+      @question = Question.find(params[:comment][:commentable_id])
+      @question.comments << @comment
+      if @comment.save
+        redirect_to question_path(@question)
+      else
+        render :new
+      end
     else
-      render :new
+      @answer = Answer.find(params[:comment][:commentable_id])
+      @question = Question.find(@answer.question_id)
+      @answer.comments << @comment
+      if @comment.save
+        redirect_to question_path(@question)
+      else
+        render :new
+      end
     end
-
   end
 
 end
