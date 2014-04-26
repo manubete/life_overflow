@@ -1,10 +1,13 @@
 <h1> Create a Comment Below </h1>
 
   <%= form_for @comment do |f| %>
-      <%= f.label :comment_content %>
-      <%= f.text_field :comment_content %>
-      <br>
-       <%= f.hidden_field :commentable_id, value: params[:question_id] %>
+    <%= f.label :comment_content %>
+    <%= f.text_field :comment_content %>
+    <br>
+    <%= f.hidden_field :commentable_id, value: @comment.commentable_id %>
+    <br>
+    <br>
+  <%= f.hidden_field :commentable_type, value: @comment.commentable_type %>
     <br>
   <%= f.submit "Add Comment" %>
   <% end %>
