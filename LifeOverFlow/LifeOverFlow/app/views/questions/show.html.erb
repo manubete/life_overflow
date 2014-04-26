@@ -1,23 +1,36 @@
 
-<h1>Specific Question Page</h1>
-<%= @question.question_title %>
-<br>
-<%= @question.question_content %>
-<br><br>
+<div id="show_question">
+<h1><%= @question.question_title %></h1>
+<p><%= @question.question_content %></p>
+</div>
+<div class="question-comments">
+  <% @question.comments.each do |comment| %>
+   <div class="comment"><%= comment.comment_content %></div>
+  <%  end %>
+  <%= link_to "Create a Comment", new_comment_path(:question_id => @question.id) %>
+</div>
 
 <% if current_user %>
   <%= button_to "Create an Answer", new_question_answer_path(@question), :method => :get, :class => "btn btn-warning" %>
 <% end  %><br>
-<h2>All answers:</h2>
-<% @question.answers.each do |answer| %>
-  <div><%= answer.answer_content %></div>
-<% end %>
+<div id="all_answers">
+  <h4>Answers</h4>
+  <% @question.answers.each do |answer| %>
+    <div class="show_answer">
+      <div>
+        <%= answer.answer_content %>
+      </div>
+      <%= link_to "Comment on Answer", new_comment_path(:answer_id => answer.id) %>
+      <div class="answer_comments">
+         <% answer.comments.each do |comment| %>
+          <div class="answer_comment">
+            <%= comment.comment_content %>
+          </div>
+         <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<h1> Create a Comment Below </h1>
 
-<%= link_to "Create a Comment", new_comment_path(:question_id => @question.id) %>
 
-<h1> Read Some Comments:</h1>
-<% @question.comments.each do |comment| %>
-  <%= comment.comment_content %>
-<%  end %>
