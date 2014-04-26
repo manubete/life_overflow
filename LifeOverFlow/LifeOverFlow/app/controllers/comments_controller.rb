@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @question = Question.find(params[:comment][:commentable_id])
+    p "#{@question.inspect}"
     @comment = Comment.new(params[:comment])
     @question.comments << @comment
     if @comment.save

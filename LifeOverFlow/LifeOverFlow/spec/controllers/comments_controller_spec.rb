@@ -39,11 +39,16 @@ describe CommentsController do
   #       session[:user_id] = 1
   #     end
 
+  #
   #     it "creates a new Comment" do
+  #       new_Question = Question.new(question_title: "the test", question_content: "lorem ipsum ya")
+  #       new_Question.save
+
+  #       p "#{new_Question.inspect}"
   #       expect {
-  #       post :create, { :commentable_id => question.id, :comment_id => comment.id }
+  #       post :create, { :commentable_id => new_Question.id, :comment => {:comment_id =>comment.id }}
   #       }.to change { Comment.count }.by(1)
-  #     end
+  # #     end
   #   end
   # end
 end
