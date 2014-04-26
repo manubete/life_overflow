@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "User can post a answer", :js => true do
+describe "User can post a answer" do
   context "User logged into a question page" do
   let(:question) {FactoryGirl.create :question}
   let(:answer) {FactoryGirl.create :answer }
