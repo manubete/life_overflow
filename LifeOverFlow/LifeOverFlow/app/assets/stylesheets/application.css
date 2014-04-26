@@ -1,13 +1,110 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+/*--------------------------- BOOTSTRAP ------------------*/
+
+body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  width: 70%;
+  margin: 0 auto;
+  height: 60%;
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
+  background-color: #b3b3b3;
+  z-index: 10;
+  border-radius:15px;
+}
+.main_container {
+  width: 70%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #e6e6e6;
+  border-radius:15px;
+}
+.header img {
+  max-height: 80px;
+  max-width: 80px;
+  float:left;
+  padding-bottom: 10px;
+}
+#user_nav {
+  float:right;
+}
+#main_logo {
+  text-align:center;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+#main_logo a {
+  color:black;
+}
+#main_logo a:link {
+  text-decoration:none;
+}
+#horizontal{
+  /*padding: 0;*/
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
+  width: 70%;
+}
+.btn.btn-default:focus {
+  background-color:#428bca;
+  color: white;
+}
+
+/* OUR CSS  */
+/*--------------------------- Homepage ------------------*/
+#signup_form {
+}
+.sign_up_fields ul{
+}
+.all_questions {
+}
+
+/*--------------------------- USERS ------------------*/
+
+
+/*--------------------------- QUESTIONS ------------------*/
+
+#show_question {
+  border: 1px black solid;
+}
+.question_title {
+
+}
+.question_content {
+
+}
+.question_buttons {
+  padding: 5px;
+  margin: 5px;
+}
+
+/*--------------------------- ANSWERS ------------------*/
+
+
+
+/*--------------------------- COMMENTS ON QUESTIONS ------------------*/
+
+
+/*--------------------------- COMMENTS ON ANSWERS ------------------*/
+
+.answer_comments {
+  padding: 5px;
+  background-color: #E0EEEE;
+}
+
+.answer_comment {
+ padding: 2px;
+ border: 1px solid black;
+ margin: 5px;
+}
+
+
