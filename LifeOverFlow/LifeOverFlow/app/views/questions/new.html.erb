@@ -2,8 +2,10 @@
 
 <%= form_for @question do |f| %>
 <li>
-  <%= f.label :question_content %>
-  <%= f.text_field :question_content %>
+  <%= f.text_field :question_title, size: "98", placeholder: "Title" %>
+</li><br>
+<li>
+  <%= f.text_area :question_content, size: "100x12", placeholder: "Content" %>
 </li><br>
 
 <%= f.submit %>
