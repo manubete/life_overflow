@@ -1,9 +1,5 @@
 class AnswersController < ApplicationController
 before_filter :require_login, only: [:new, :create]
-  def new
-     @question = Question.find(params[:question_id])
-     @answer = Answer.new
-  end
 
   def create
     @question = Question.find params[:question_id]
