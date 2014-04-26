@@ -5,22 +5,16 @@ feature 'Questions' do
     let!(:question) { FactoryGirl.attributes_for :question }
     let!(:user) { FactoryGirl.create :user }
     it "can go to the homepage, sees a Create Question button that leads to a Create Question form" do
+      ApplicationController.any_instance.stub(:current_user).and_return(user)
       visit root_path
-      click_on 'Log In'
-      fill_in 'email', :with => user.email
-      fill_in 'password', :with => user.password
-      click_on 'Log in'
       click_on "Create a Question"
       expect(page).to have_content "Create a Question Below"
     end
 
     it "can click on Create Question and create a question" do
-      visit root_path
-      click_on "Log In"
-      fill_in 'email', :with => user.email
-      fill_in 'password', :with => user.password
-      click_on 'Log in'
-      click_on "Create a Question"
+      ApplicationController.any_instance.stub(:current_user).and_return(user)
+
+      visit new_question_path
       fill_in 'question[question_title]', :with => question[:question_title]
       fill_in 'question[question_content]', :with => question[:question_content]
       click_on "Create Question"
