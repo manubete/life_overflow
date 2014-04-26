@@ -8,18 +8,21 @@ feature 'Questions' do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
       visit root_path
       click_on "Create a Question"
-      expect(page).to have_content "Create a Question Below"
-    end
-
-    it "can click on Create Question and create a question" do
-      ApplicationController.any_instance.stub(:current_user).and_return(user)
-
-      visit new_question_path
       fill_in 'question[question_title]', :with => question[:question_title]
       fill_in 'question[question_content]', :with => question[:question_content]
       click_on "Create Question"
       expect(page).to have_content Question.last.question_content
     end
+
+    # it "can click on Create Question and create a question" do
+    #   ApplicationController.any_instance.stub(:current_user).and_return(user)
+
+    #   visit new_question_path
+    #   fill_in 'question[question_title]', :with => question[:question_title]
+    #   fill_in 'question[question_content]', :with => question[:question_content]
+    #   click_on "Create Question"
+    #   expect(page).to have_content Question.last.question_content
+    # end
   end
 
   context "User can click on Show on the homepage to see the question's page" do
