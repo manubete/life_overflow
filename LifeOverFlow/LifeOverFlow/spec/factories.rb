@@ -12,6 +12,7 @@ FactoryGirl.define do
   end
 
   factory :question do
+    question_title { Faker::Lorem.word}
     question_content { Faker::Lorem.sentence }
   end
 

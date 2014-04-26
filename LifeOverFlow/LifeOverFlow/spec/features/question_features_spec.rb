@@ -21,6 +21,7 @@ feature 'Questions' do
       fill_in 'password', :with => user.password
       click_on 'Log in'
       click_on "Create a Question"
+      fill_in 'question[question_title]', :with => question[:question_title]
       fill_in 'question[question_content]', :with => question[:question_content]
       click_on "Create Question"
       expect(page).to have_content Question.last.question_content
