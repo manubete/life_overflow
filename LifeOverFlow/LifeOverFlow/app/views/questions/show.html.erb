@@ -11,15 +11,15 @@
 </div>
 
 <% if current_user %>
-  <%= link_to 'new answer', '#', :class => 'new-answer', :remote => true %>
+  <%= link_to 'new answer', '#', :class =>'new-answer'  %>
 
-  <%= form_for [@question, @answer], remote: true do |f| %>
+  <div class="answer-question">
+    <%= form_for [@question, @answer], remote: true do |f| %>
     <%= f.label :answer_content %>
     <%= f.text_field :answer_content %>
     <%= f.submit "Submit" %>
-
-  <% end %>
-
+    <% end %>
+  </div>
 
   <%= button_to "Create an Answer", new_question_answer_path(@question), :method => :get, :class => "btn btn-warning" %>
 <% end  %><br>

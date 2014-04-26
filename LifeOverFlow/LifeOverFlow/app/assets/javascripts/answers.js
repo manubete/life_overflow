@@ -1,15 +1,23 @@
-var Answer = {
-  init: function(){
+var Ajax ={
+  bindEvents: function(){
     $('a.new-answer').on('click', this.toggleAnswerForm);
+  },
+
+  toggleAnswerForm: function (e){
+      $('div.answer-question').toggle()
   }
 }
 
 
 
-
-
-
-
 $(document).ready(function(){
-  Answer.init();
+
+ Ajax.bindEvents();
+
+// toggleAnswerForm: function(e) {
+//     e.preventDefault();
+//     $('form#new_menu').toggleClass('hidden')
+//   }
+
+
 })

@@ -22,7 +22,6 @@ FactoryGirl.define do
   end
 
   factory :comment do
-    #hippie ipsum, just for laughs ;)
     comment_content { "Energetic exchange incense reproductive system nectar, change agent harmful electromagnetic fields massage therapist with cayenne pepper infinite blessings om seasonal." }
   end
 
