@@ -11,13 +11,24 @@
 </div>
 
 <% if current_user %>
-  <%= button_to "Create an Answer", new_question_answer_path(@question), :method => :get, :class => "btn btn-warning" %>
+  <%= link_to 'new answer', '#', :class =>'new-answer'  %>
+
+  <div id="answer-question">
+    <%= form_for [@question, @answer], remote: true, :html => {:class => 'hidden'} do |f| %>
+    <%= f.label :answer_content %>
+    <%= f.text_field :answer_content %>
+    <%= f.submit "Submit" %>
+    <% end %>
+ </div>
+
 <% end  %><br>
+
 <div id="all_answers">
   <h4>Answers</h4>
   <% @question.answers.each do |answer| %>
     <div class="show_answer">
-      <span><%= answer.answer_content %></span>
+      <%= answer.answer_content %>
+
       <%= link_to "Comment on Answer", new_comment_path(:answer_id => answer.id) %>
       <div class="answer_comments">
          <% answer.comments.each do |comment| %>

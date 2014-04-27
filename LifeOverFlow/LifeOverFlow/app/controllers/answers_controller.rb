@@ -1,9 +1,5 @@
 class AnswersController < ApplicationController
 before_filter :require_login, only: [:new, :create]
-  def new
-     @question = Question.find(params[:question_id])
-     @answer = Answer.new
-  end
 
   def create
     @user = current_user
@@ -11,7 +7,7 @@ before_filter :require_login, only: [:new, :create]
     @answer = @question.answers.build params[:answer]
     @answer.update_attributes(:user_id => @user.id)
     if @answer.save
-      redirect_to question_path(@question)
+      render :partial => 'answer', :locals => {answer: @answer}
     else
       render :nothing => true
     end

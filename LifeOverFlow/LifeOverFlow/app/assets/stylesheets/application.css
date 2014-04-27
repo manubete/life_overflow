@@ -1,4 +1,8 @@
+
+/* --------- bootstrap stuff for the layout page -------------- */
+
 /*--------------------------- BOOTSTRAP ------------------*/
+
 
 body {
   overflow: hidden;
@@ -59,6 +63,9 @@ body {
   color: white;
 }
 
+<<<<<<< HEAD
+/* --------- CUSTOM STUFF -------------- */
+=======
 /* OUR CSS */
 
 /*--------------------------- GENERAL CSS ------------------*/
@@ -141,6 +148,7 @@ body {
 }
 
 /*--------------------------- COMMENTS ON ANSWERS ------------------*/
+>>>>>>> master
 
 .answer_comments {
   padding: 5px;
@@ -153,4 +161,14 @@ body {
  margin: 5px;
 }
 
+<<<<<<< HEAD
+#show_question {
+  border: 1px black solid;
+}
 
+.hidden {
+  display: none;
+}
+=======
+
+>>>>>>> master

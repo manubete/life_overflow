@@ -12,14 +12,8 @@ describe AnswersController do
          session[:user_id] = 1
       end
 
-      it "is successful" do
-        get :new, {:question_id => question.id }
-        expect(response).to be_success
-      end
-      it "assigns @answer to the Question found by id" do
-        get :new, {:question_id => question.id, :id => answer.id }
-        expect(assigns(:answer)).to be_a_new Answer
-      end
+      ## modify the answers controller and feature tests to incorporate
+
     end
 
     context "guest user" do
