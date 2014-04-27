@@ -50,8 +50,11 @@
   <%= yield %>
 
 <div id="signup_form">
+  <% if current_user %>
+    <%=link_to "Sign Up", "#", :class => 'new_user' %>
+  <% end  %>
 
-<%= form_for @user, remote: true do |f| %>
+<%= form_for @user, :remote => true, :html => {:class => 'hidden', :class => 'signupform' } do |f| %>
   <div class="error_messages">
     <% if @user.errors.any? %>
       <h2>Form is invalid</h2>
@@ -61,9 +64,9 @@
     <% end %>
   </div>
   <div class="sign_up_fields">
-    <p><%= f.label :username %>&nbsp;<%= f.text_field :username %></p>
-    <p><%= f.label :email %>&nbsp;<%= f.text_field :email %></p>
-    <p><%= f.label :password %>&nbsp;<%= f.password_field :password %></p>
+    <p><%= f.text_field :username, placeholder: "User name" %></p>
+    <p><%= f.text_field :email, placeholder: "Email address" %></p>
+    <p><%= f.password_field :password, placeholder: "Password" %></p>
     <p class="submit-button"><%= f.submit "Create Account"%></p>
   </div>
 <% end %>
