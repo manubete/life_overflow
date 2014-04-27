@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @user = User.new
+  end
+
   def show
     @user = User.find params[:id]
     @user_questions = @user.questions
