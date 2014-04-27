@@ -63,7 +63,9 @@ body {
 
 /*--------------------------- GENERAL CSS ------------------*/
 .submit-button{
-
+}
+.hidden {
+  display: none;
 }
 
 /*--------------------------- USERS ------------------*/
@@ -106,6 +108,9 @@ body {
 #show_question p {
 
 }
+.questionform input {
+  margin: 9px 0;
+}
 
 /*--------------------------- ANSWERS ------------------*/
 #all_answers {
@@ -140,5 +145,10 @@ body {
 .answer_comments {
   padding: 5px;
   background-color: #E0EEEE;
+}
+.answer_comment {
+ padding: 2px;
+ border: 1px solid black;
+ margin: 5px;
 }
 

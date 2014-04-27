@@ -5,11 +5,11 @@ var SignUp = {
   },
 
   toggleSignUp: function(e){
-    console.log(e)
-    console.log("toggle toffle")
   $('div#signup_form').toggleClass('hidden');
   },
+
   appendSignUp: function(event, data) {
+    console.log("appending the signup form")
       $('.error_messages').html('')
       $('form#user')[0].reset()
       $('#signup_form').append(data);
@@ -17,6 +17,7 @@ var SignUp = {
     },
 
     appendErrors: function(event, xhr, status, error) {
+      console.log("appending the errors")
       $('.error_messages').html('')
       $('.error_messages').append(xhr.responseText);
     }
