@@ -1,10 +1,16 @@
-var Ajax ={
+var Answers ={
   bindEvents: function(){
     $('a.new-answer').on('click', this.toggleAnswerForm);
+    $('form#new_answer').on('ajax:success', this.appendAnswer)
   },
 
   toggleAnswerForm: function (e){
-      $('div.answer-question').toggle()
+     console.log("wasup")
+      $('form#new_answer').toggleClass('hidden');
+  },
+
+  appendAnswer: function(e) {
+    console.log("its working")
   }
 }
 
@@ -12,12 +18,7 @@ var Ajax ={
 
 $(document).ready(function(){
 
- Ajax.bindEvents();
-
-// toggleAnswerForm: function(e) {
-//     e.preventDefault();
-//     $('form#new_menu').toggleClass('hidden')
-//   }
+ Answers.bindEvents();
 
 
 })

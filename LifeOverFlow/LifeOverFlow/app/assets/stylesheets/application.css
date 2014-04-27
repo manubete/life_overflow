@@ -76,3 +76,7 @@ body {
 #show_question {
   border: 1px black solid;
 }
+
+.hidden {
+  display: none;
+}

@@ -23,7 +23,18 @@ describe QuestionsController do
         get :new
         expect(response).to be_success
       end
-    end
+
+    context " #show" do
+      let!(:question) { FactoryGirl.create :question}
+      let!(:answer) { FactoryGirl.create :answer}
+         it "assigns @answer to the Question found by id" do
+         get :show, {:id => question.id }
+         p "#{assigns(:question)} here"
+         expect(assigns(:answer)).to be_a_new Answer
+      end
+   end
+
+  end
 
     context "guest user" do
       before(:each) do
