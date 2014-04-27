@@ -7,7 +7,7 @@ def create
   @vote = Vote.new(vote_params)
   p @vote
   if @vote.save
-    @vote
+    Question.find(@vote.voteable_id).votes_total
   else
     @vote.errors.full_messages
   end
