@@ -1,0 +1,19 @@
+<div id="signup_form">
+
+<%= form_for @user do |f| %>
+  <div class="sign_up_fields">
+    <p><%= f.text_field :username, placeholder: "User name" %></p>
+    <p><%= f.text_field :email, placeholder: "Email address" %></p>
+    <p><%= f.password_field :password, placeholder: "Password" %></p>
+    <%= f.submit "Create Account"%>
+  </div>
+  <div class="error_messages">
+    <% if @user.errors.any? %>
+      <h2>Form is invalid</h2>
+      <% for message in @user.errors.full_messages %>
+        <%= message %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+</div>
