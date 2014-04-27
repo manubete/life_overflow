@@ -4,14 +4,11 @@ before_filter :require_login, only: [:new, :create]
   def index
     @questions = Question.all
     @user = User.new
+    @question = Question.new
   end
 
   def show
     @question = Question.find params[:id]
-  end
-
-  def new
-    @question = Question.new
   end
 
   def create
@@ -21,9 +18,9 @@ before_filter :require_login, only: [:new, :create]
     @question.update_attributes(:user_id => @user.id)
 
     if @question.save
-      redirect_to root_path
+      render :partial => 'question', :locals => {:question => @question}
     else
-      render :new
+      render :text => @question.errors.full_messages.join(', '), :status => :failure
     end
   end
 
