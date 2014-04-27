@@ -1,7 +1,7 @@
 class CreateVotes < ActiveRecord::Migration
   def up
     create_table :votes do |col|
-      col.string :type
+      col.string :vote_type
       col.references :voteable, polymorphic: true
       col.timestamps
     end
