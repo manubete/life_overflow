@@ -25,7 +25,8 @@ FactoryGirl.define do
   end
 
   factory :vote do
-    type {'up'}
+    vote_type {'up'}
+    question
   end
 
 end
