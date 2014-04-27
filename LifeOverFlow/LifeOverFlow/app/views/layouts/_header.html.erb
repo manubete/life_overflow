@@ -1,0 +1,30 @@
+<div class="header">
+  <img src = "http://images.wikia.com/uncyclopedia/images/archive/8/80/20070603184500!Smiley.png">
+  <div id="user_nav">
+
+  <ul class=nav nav-pills nav-stacked>
+    <% if current_user %>
+      <li> <%= link_to "#{current_user.username}", user_path(current_user.id) %></li>
+      <li> <%= button_to "Log out", log_out_path, :class => "btn btn-danger", :method => :get %></li>
+    <% else %>
+      <li> <%= button_to "Sign Up", sign_up_path, :class => "btn btn-success", :method => :get %></li>
+      <li><%= link_to "Log In", log_in_path %></li>
+    <% end %>
+  </ul>
+  </div>
+
+  <div id="main_logo">
+    <a href='/'>Life Overflow</a>
+  </div>
+
+
+  <div class="text-center">
+    <em>Order by:</em>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Most UpVotes</button>
+      <button type="button" class="btn btn-default">Most Recent</button>
+      <button type="button" class="btn btn-default">Trending</button>
+    </div>
+  </div>
+
+</div>
