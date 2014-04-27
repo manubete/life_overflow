@@ -11,6 +11,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params[:comment])
+
+    @user = current_user
+    @comment.update_attributes(:user_id => @user.id)
+
     if @comment.commentable_type == "Question"
       @question = Question.find(params[:comment][:commentable_id])
       @question.comments << @comment
