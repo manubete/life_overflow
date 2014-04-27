@@ -1,21 +1,20 @@
 class CommentsController < ApplicationController
 
   def new
-    # @question = Question.find(params[:question_id])
-    if params[:question_id]  != nil
-      @comment = Comment.new(:commentable_id => params[:question_id], :commentable_type => "Question")
-    else
-      @comment = Comment.new(:commentable_id => params[:answer_id], :commentable_type => "Answer")
-    end
+    # if params[:question_id]  != nil
+    #   @comment = Comment.new(:commentable_id => params[:question_id], :commentable_type => "Question")
+    # else
+    #   @comment = Comment.new(:commentable_id => params[:answer_id], :commentable_type => "Answer")
+    # end
   end
 
   def create
     @comment = Comment.new(params[:comment])
-
     @user = current_user
     @comment.update_attributes(:user_id => @user.id)
 
     if @comment.commentable_type == "Question"
+      puts "YEEEEEEESSSSS3"
       @question = Question.find(params[:comment][:commentable_id])
       @question.comments << @comment
       if @comment.save
@@ -24,6 +23,7 @@ class CommentsController < ApplicationController
         render :new
       end
     else
+      puts @comment.commentable_type
       @answer = Answer.find(params[:comment][:commentable_id])
       @question = Question.find(@answer.question_id)
       @answer.comments << @comment

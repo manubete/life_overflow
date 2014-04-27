@@ -1,5 +1,4 @@
 body {
-  overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -85,4 +84,8 @@ body {
 
 #show_question {
   border: 1px black solid;
+}
+
+.hidden {
+  display:none;
 }

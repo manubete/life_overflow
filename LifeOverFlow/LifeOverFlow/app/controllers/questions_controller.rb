@@ -7,6 +7,7 @@ before_filter :require_login, only: [:new, :create]
 
   def show
     @question = Question.find params[:id]
+    @comment = Comment.new
   end
 
   def new

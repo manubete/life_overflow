@@ -4,10 +4,22 @@
 <p><%= @question.question_content %></p>
 </div>
 <div class="question-comments">
-  <% @question.comments.each do |comment| %>
-   <div class="comment"><%= comment.comment_content %></div>
-  <%  end %>
-  <%= link_to "Create a Comment", new_comment_path(:question_id => @question.id) %>
+  <div id="show_comments">
+    <% @question.comments.each do |comment| %>
+      <div class="comment"><%= comment.comment_content %></div>
+    <% end %>
+  </div>
+  <%= link_to "Create a Comment", "#", :class => 'new_comment_on_question' %>
+
+  <%= form_for @comment, :remote => true, :html => {:class => 'hidden'} do |f| %>
+    <%= f.label :comment_content %>
+    <%= f.text_field :comment_content %>
+    <br>
+    <%= f.hidden_field :commentable_id, value: @question.id%>
+    <%= f.hidden_field :commentable_type, value: "Question" %>
+    <%= f.submit "Add Comment" %>
+  <% end %>
+  <br>
 </div>
 
 <% if current_user %>
@@ -20,7 +32,8 @@
       <div>
         <%= answer.answer_content %>
       </div>
-      <%= link_to "Comment on Answer", new_comment_path(:answer_id => answer.id) %>
+      <%= link_to "Comment on Answer", '#', :class => 'new_comment_on_answer' %>
+        <!-- Edit the ajax for these answers -->
       <div class="answer_comments">
          <% answer.comments.each do |comment| %>
           <div class="answer_comment">
