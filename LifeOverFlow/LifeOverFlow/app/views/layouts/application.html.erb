@@ -22,7 +22,7 @@
         <li> <%= link_to "#{current_user.username}", user_path(current_user.id) %></li>
         <li> <%= button_to "Log out", log_out_path, :class => "btn btn-danger", :method => :get %></li>
       <% else %>
-        <li> <%= button_to "Sign Up", sign_up_path, :class => "btn btn-success", :method => :get %></li>
+        <li> <%= link_to "Sign Up", "#", :class => "btn btn-success", :id => "sign_up_btn" %></li>
         <li><%= link_to "Log In", log_in_path %></li>
       <% end %>
     </ul>
@@ -48,6 +48,26 @@
 <hr id = "horizontal">
 <div class="main_container">
   <%= yield %>
+
+<div id="signup_form">
+
+<%= form_for @user, remote: true do |f| %>
+  <div class="error_messages">
+    <% if @user.errors.any? %>
+      <h2>Form is invalid</h2>
+      <% for message in @user.errors.full_messages %>
+        <%= message %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="sign_up_fields">
+    <p><%= f.label :username %>&nbsp;<%= f.text_field :username %></p>
+    <p><%= f.label :email %>&nbsp;<%= f.text_field :email %></p>
+    <p><%= f.label :password %>&nbsp;<%= f.password_field :password %></p>
+    <p class="submit-button"><%= f.submit "Create Account"%></p>
+  </div>
+<% end %>
+</div>
 </div>
 
 

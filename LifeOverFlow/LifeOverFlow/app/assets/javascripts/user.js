@@ -1,16 +1,17 @@
-// $(document).ready(function(){
-//   $('a#sign_up_btn').on('click', this.toggleUserSignUp);
-// })
+var SignUp = {
 
-// toggleUserSignUp: function(e){
-//   e.preventDefault();
-//   $('form').toggleClass('hidden');
-// },
+  bindEvents: function(){
+    console.log("bindin erryday")
+    $('a#sign_up_btn').on('click', this.toggleSignUp);
+  },
 
-// appendSignUp: function(event, data, status, xhr){
-//   $('div#main_container').append(data);
-// },
-// appendErrors: function(event, xhr, status, error) {
-//     $('div#main_container').before(xhr.responseText);
-//   }
-// }
+  toggleSignUp: function(e){
+    console.log(e)
+    console.log("toggle toffle")
+  $('div#signup_form').toggleClass('hidden');
+  }
+
+}
+$(document).ready(function(){
+  SignUp.bindEvents();
+})
