@@ -17,7 +17,6 @@ var SignUp = {
     },
 
     appendErrors: function(event, xhr, status, error) {
-      console.log("appending the errors")
       $('.error_messages').html('')
       $('.error_messages').append(xhr.responseText);
     }
