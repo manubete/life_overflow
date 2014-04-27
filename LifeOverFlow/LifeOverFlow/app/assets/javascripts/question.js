@@ -12,6 +12,7 @@ var Question = {
 
   appendQuestion: function(event, data) {
     $('#quest_errors').html('')
+    $('form#new_question')[0].reset()
     $('#show_questions').append(data);
     $('form#new_question').toggleClass('hidden');
   },
