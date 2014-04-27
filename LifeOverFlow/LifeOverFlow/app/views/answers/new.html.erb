@@ -1,10 +1,7 @@
+<div id="create-answer">
 <h1> Create an Answer Below </h1>
-
-<%= form_for [@question, @answer] do |f| %>
-<li>
-  <%= f.label :answer_content %>
-  <%= f.text_field :answer_content %>
-</li>
-<%= f.submit "Submit" %>
-
-<% end %>
+  <%= form_for [@question, @answer] do |f| %>
+    <p><%= f.label :answer_content %>&nbsp;<%= f.text_field :answer_content %></p>
+    <p><%= f.submit "Submit" %></p>
+  <% end %>
+</div>

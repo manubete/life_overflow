@@ -1,13 +1,8 @@
 <h1> Create a Question Below </h1>
 
 <%= form_for @question do |f| %>
-<li>
-  <%= f.text_field :question_title, size: "98", placeholder: "Title" %>
-</li><br>
-<li>
-  <%= f.text_area :question_content, size: "100x12", placeholder: "Content" %>
-</li><br>
-
-<%= f.submit %>
+  <p><%= f.text_field :question_title, size: "98", placeholder: "Title" %></p>
+  <p><%= f.text_area :question_content, size: "100x12", placeholder: "Content" %></p>
+  <p><%= f.submit %></p>
 
 <% end %>

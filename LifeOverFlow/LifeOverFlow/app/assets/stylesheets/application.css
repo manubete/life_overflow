@@ -59,40 +59,81 @@ body {
   color: white;
 }
 
-/* OUR CSS  */
-/*--------------------------- Homepage ------------------*/
-#signup_form {
-}
-.sign_up_fields ul{
-}
-.all_questions {
+/* OUR CSS */
+
+/*--------------------------- GENERAL CSS ------------------*/
+.submit-button{
+
 }
 
 /*--------------------------- USERS ------------------*/
+#signup_form {
 
+}
+.error_messages{
 
+}
+.error_messages h2 {
+
+}
+.sign_up_fields {
+
+}
+#login_form {
+
+}
 /*--------------------------- QUESTIONS ------------------*/
-
-#show_question {
-  border: 1px black solid;
-}
-.question_title {
+.all_questions {
 
 }
-.question_content {
+.all_questions h2 {
+
+}
+.all_questions p {
 
 }
 .question_buttons {
   padding: 5px;
   margin: 5px;
 }
+#show_question {
+  border: 1px black solid;
+  margin: 5px;
+}
+#show_question h3 {
+
+}
+#show_question p {
+
+}
 
 /*--------------------------- ANSWERS ------------------*/
+#all_answers {
 
+}
+#all_answers h4 {
 
+}
+#create-answer {
+
+}
+#create-answer h1 {
+
+}
+#create-answer p {
+
+}
 
 /*--------------------------- COMMENTS ON QUESTIONS ------------------*/
+#create-ques-comment {
 
+}
+#create-ques-comment h4 {
+
+}
+#create-ques-comment p {
+
+}
 
 /*--------------------------- COMMENTS ON ANSWERS ------------------*/
 

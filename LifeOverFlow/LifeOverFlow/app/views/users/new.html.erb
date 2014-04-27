@@ -10,12 +10,10 @@
     <% end %>
   </div>
   <div class="sign_up_fields">
-    <ul>
-      <li><%= f.label :username %>&nbsp;<%= f.text_field :username %></li>
-      <li><%= f.label :email %>&nbsp;<%= f.text_field :email %></li>
-      <li><%= f.label :password %>&nbsp;<%= f.password_field :password %></li>
-      <p class="button"><%= f.submit "Create Account"%></p>
-    </ul>
+    <p><%= f.label :username %>&nbsp;<%= f.text_field :username %></p>
+    <p><%= f.label :email %>&nbsp;<%= f.text_field :email %></p>
+    <p><%= f.label :password %>&nbsp;<%= f.password_field :password %></p>
+    <p class="submit-button"><%= f.submit "Create Account"%></p>
   </div>
 <% end %>
 </div>
