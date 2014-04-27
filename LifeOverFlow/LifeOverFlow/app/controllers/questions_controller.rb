@@ -16,6 +16,10 @@ before_filter :require_login, only: [:new, :create]
 
   def create
     @question = Question.new params[:question]
+
+    @user = current_user
+    @question.update_attributes(:user_id => @user.id)
+
     if @question.save
       redirect_to root_path
     else

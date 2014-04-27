@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
+    @user_questions = @user.questions
+    @user_answers = @user.answers
+    @user_comments = @user.comments
   end
 
   def new

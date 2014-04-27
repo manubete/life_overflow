@@ -54,7 +54,8 @@ feature 'Users' do
     let!(:user) { FactoryGirl.create :user }
     let!(:question) { FactoryGirl.create :question, :user_id => user.id }
     let!(:answer) { FactoryGirl.create :answer, :user_id => user.id, :question_id => question.id }
-    let!(:comment) { FactoryGirl.create :comment, :user_id => user.id, :question_id => question.id }
+    let!(:comment) { FactoryGirl.create :comment, :user_id => user.id, :commentable_id => question.id, :commentable_type => "Question" }
+    let!(:comment) { FactoryGirl.create :comment, :user_id => user.id, :commentable_id => answer.id, :commentable_type => "Answer" }
 
     before(:each) do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
@@ -63,6 +64,14 @@ feature 'Users' do
 
     it "can go to his homepage and see the questions that he created" do
       expect(page).to have_content "#{question.question_title}"
+    end
+
+    it "can go to his homepage and see the answers that he created" do
+      expect(page).to have_content "#{answer.answer_content}"
+    end
+
+    it "can go to his homepage and see the comments that he created" do
+      expect(page).to have_content "#{comment.comment_content}"
     end
   end
 end
