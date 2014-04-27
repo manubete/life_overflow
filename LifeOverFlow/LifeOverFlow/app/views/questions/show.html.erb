@@ -38,12 +38,13 @@
 
 
 <div id="all_answers">
-  <h4>Answers</h4>
+  <h4><%= @question.answers.count %> Answers</h4>
   <% @question.answers.each do |answer| %>
     <div class="show_answer">
-      <div>
+      <div id = "answer_content">
+
         <%= answer.answer_content %>
-      </div>
+      </div><br>
       <%= link_to "Comment on Answer", '#', :class => 'new_comment_on_answer' %>
       <%= form_for @comment, :remote => true, :html => {:class => 'answerCommentForm'} do |f| %>
             <%= f.label :comment_content %>
@@ -55,10 +56,9 @@
       <% end %>
       <div id="show_answer_comments">
 
-      <%= link_to "Comment on Answer", new_comment_path(:answer_id => answer.id) %>
       <div class="answer_comments">
          <% answer.comments.each do |comment| %>
-          <span class="answer_comment"><%= comment.comment_content %></span>
+          <span class="answer_comment"><%= comment.comment_content %></span><br>
          <% end %>
       </div>
 

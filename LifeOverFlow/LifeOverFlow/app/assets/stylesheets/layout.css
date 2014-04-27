@@ -71,16 +71,7 @@ body {
 
 /* OUR CSS  */
 
-.answer_comments {
-  padding: 5px;
-  background-color: #E0EEEE;
-}
 
-.answer_comment {
- padding: 2px;
- border: 1px solid black;
- margin: 5px;
-}
 
 #show_question {
   border: 1px black solid;

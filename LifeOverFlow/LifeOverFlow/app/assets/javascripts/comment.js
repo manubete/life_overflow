@@ -18,12 +18,14 @@ var Comment = {
   },
 
   toggleAnswerCommentForm: function(e) {
-
     e.preventDefault();
-    if ($('.answerCommentForm').is(':hidden')) {
-      $('.answerCommentForm').slideDown()
+    var answer_form = $(this.nextElementSibling)
+
+    if (answer_form.is(':hidden')) {
+      console.log("BOOYAO")
+      answer_form.slideDown()
     } else {
-      $('.answerCommentForm').slideUp()
+      answer_form.slideUp()
     }
   },
 
