@@ -6,7 +6,7 @@ feature 'Guest users' do
     it "can go to the homepage, sees a Create Account button that leads to a Create Account form" do
       visit root_path
       click_on "Sign Up"
-      expect(page).to have_content "Create an Account Below"
+      expect(page).to have_content "Sign Up"
     end
 
     it "can fill out the Create an Account form and create an account" do
