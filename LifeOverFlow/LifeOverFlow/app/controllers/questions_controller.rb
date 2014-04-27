@@ -4,13 +4,18 @@ before_filter :require_login, only: [:new, :create]
   def index
     @questions = Question.all
     @question = Question.new
+    @answer = Answer.new
   end
 
   def show
     @question = Question.find params[:id]
+    @comment = Comment.new
     @answer = Answer.new
-    p "#{@answer}"
-    p "#{@question}"
+  end
+
+  def new
+    @question = Question.new
+    @answer = Answer.new
   end
 
   def create

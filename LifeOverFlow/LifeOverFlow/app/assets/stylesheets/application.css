@@ -121,10 +121,13 @@ body {
 
 /*--------------------------- ANSWERS ------------------*/
 #all_answers {
-
 }
 #all_answers h4 {
 
+}
+
+#answer_content{
+  background-color: #E9967A
 }
 #create-answer {
 
@@ -148,7 +151,6 @@ body {
 }
 
 /*--------------------------- COMMENTS ON ANSWERS ------------------*/
->>>>>>> master
 
 .answer_comments {
   padding: 5px;
@@ -157,11 +159,10 @@ body {
 
 .answer_comment {
  padding: 2px;
- border: 1px solid black;
+
  margin: 5px;
 }
 
-<<<<<<< HEAD
 #show_question {
   border: 1px black solid;
 }
@@ -169,6 +170,3 @@ body {
 .hidden {
   display: none;
 }
-=======
-
->>>>>>> master

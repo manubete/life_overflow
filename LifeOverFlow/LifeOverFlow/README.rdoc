@@ -16,3 +16,7 @@ Wire Frames:
 [Home Page](http://imgur.com/aho3MHc.png)
 
 [Question Page](http://i.imgur.com/vyWMqsJ.png)
+
+
+Stuff to do:
+- fix it so user is logged in after creating an account
