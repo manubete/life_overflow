@@ -13,13 +13,13 @@
 <% if current_user %>
   <%= link_to 'new answer', '#', :class =>'new-answer'  %>
 
- <!--  <div id="answer-question"> -->
+  <div id="answer-question">
     <%= form_for [@question, @answer], remote: true, :html => {:class => 'hidden'} do |f| %>
     <%= f.label :answer_content %>
     <%= f.text_field :answer_content %>
     <%= f.submit "Submit" %>
     <% end %>
- <!--  </div> -->
+ </div>
 
 <% end  %><br>
 
@@ -27,9 +27,9 @@
   <h4>Answers</h4>
   <% @question.answers.each do |answer| %>
     <div class="show_answer">
-      <div>
+
         <%= answer.answer_content %>
-      </div>
+
       <%= link_to "Comment on Answer", new_comment_path(:answer_id => answer.id) %>
       <div class="answer_comments">
          <% answer.comments.each do |comment| %>
