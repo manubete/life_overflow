@@ -1,7 +1,8 @@
 var Question = {
   init: function() {
     $('a.new_question').on('click',this.toggleQuestionForm);
-    $('form#new_question').on('ajax:success', this.appendQuestion)
+    $('form#new_question').on('ajax:success', this.appendQuestion);
+    $('form#new_question').on('ajax:error', this.appendErrors);
   },
 
   toggleQuestionForm: function(e) {
@@ -10,7 +11,14 @@ var Question = {
   },
 
   appendQuestion: function(event, data) {
-    $('#show_questions').append(data)
+    $('#quest_errors').html('')
+    $('#show_questions').append(data);
+    $('form#new_question').toggleClass('hidden');
+  },
+
+  appendErrors: function(event, xhr, status, error) {
+    $('#quest_errors').html('')
+    $('#quest_errors').append(xhr.responseText);
   }
 }
 
