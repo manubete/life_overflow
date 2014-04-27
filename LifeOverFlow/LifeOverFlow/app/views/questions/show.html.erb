@@ -4,27 +4,30 @@
 <p><%= @question.question_content %></p>
 </div>
 <div class="question-comments">
-  <div id="show_comments">
+  <div id="show_question_comments">
     <% @question.comments.each do |comment| %>
       <div class="comment"><%= comment.comment_content %></div>
     <% end %>
   </div>
-  <%= link_to "Create a Comment", "#", :class => 'new_comment_on_question' %>
+  <%= link_to "Comment on This Question", "#", :class => 'new_comment_on_question' %>
+  <div id="comment_question_errors">
 
-  <%= form_for @comment, :remote => true, :html => {:class => 'hidden'} do |f| %>
+<%= form_for @comment, :remote => true, :html => {:class => 'questionCommentForm'} do |f| %>
     <%= f.label :comment_content %>
     <%= f.text_field :comment_content %>
     <br>
     <%= f.hidden_field :commentable_id, value: @question.id%>
     <%= f.hidden_field :commentable_type, value: "Question" %>
     <%= f.submit "Add Comment" %>
-  <% end %>
+<% end %>
   <br>
 </div>
 
 <% if current_user %>
   <%= button_to "Create an Answer", new_question_answer_path(@question), :method => :get, :class => "btn btn-warning" %>
 <% end  %><br>
+
+
 <div id="all_answers">
   <h4>Answers</h4>
   <% @question.answers.each do |answer| %>
@@ -33,14 +36,22 @@
         <%= answer.answer_content %>
       </div>
       <%= link_to "Comment on Answer", '#', :class => 'new_comment_on_answer' %>
-        <!-- Edit the ajax for these answers -->
-      <div class="answer_comments">
+      <%= form_for @comment, :remote => true, :html => {:class => 'answerCommentForm'} do |f| %>
+            <%= f.label :comment_content %>
+            <%= f.text_field :comment_content %>
+            <br>
+            <%= f.hidden_field :commentable_id, value: answer.id%>
+            <%= f.hidden_field :commentable_type, value: "Answer" %>
+            <%= f.submit "Add Comment" %>
+      <% end %>
+      <div id="show_answer_comments">
          <% answer.comments.each do |comment| %>
           <div class="answer_comment">
             <%= comment.comment_content %>
           </div>
          <% end %>
       </div>
+
     </div>
   <% end %>
 </div>
