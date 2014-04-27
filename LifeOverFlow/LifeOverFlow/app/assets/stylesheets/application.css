@@ -1,4 +1,7 @@
+
 /* --------- bootstrap stuff for the layout page -------------- */
+
+/*--------------------------- BOOTSTRAP ------------------*/
 
 
 body {
@@ -60,7 +63,92 @@ body {
   color: white;
 }
 
+<<<<<<< HEAD
 /* --------- CUSTOM STUFF -------------- */
+=======
+/* OUR CSS */
+
+/*--------------------------- GENERAL CSS ------------------*/
+.submit-button{
+}
+.hidden {
+  display: none;
+}
+
+/*--------------------------- USERS ------------------*/
+#signup_form {
+
+}
+.error_messages{
+
+}
+.error_messages h2 {
+
+}
+.sign_up_fields {
+
+}
+#login_form {
+
+}
+/*--------------------------- QUESTIONS ------------------*/
+.all_questions {
+
+}
+.all_questions h2 {
+
+}
+.all_questions p {
+
+}
+.question_buttons {
+  padding: 5px;
+  margin: 5px;
+}
+#show_question {
+  border: 1px black solid;
+  margin: 5px;
+}
+#show_question h3 {
+
+}
+#show_question p {
+
+}
+.questionform input {
+  margin: 9px 0;
+}
+
+/*--------------------------- ANSWERS ------------------*/
+#all_answers {
+
+}
+#all_answers h4 {
+
+}
+#create-answer {
+
+}
+#create-answer h1 {
+
+}
+#create-answer p {
+
+}
+
+/*--------------------------- COMMENTS ON QUESTIONS ------------------*/
+#create-ques-comment {
+
+}
+#create-ques-comment h4 {
+
+}
+#create-ques-comment p {
+
+}
+
+/*--------------------------- COMMENTS ON ANSWERS ------------------*/
+>>>>>>> master
 
 .answer_comments {
   padding: 5px;
@@ -73,6 +161,7 @@ body {
  margin: 5px;
 }
 
+<<<<<<< HEAD
 #show_question {
   border: 1px black solid;
 }
@@ -80,3 +169,6 @@ body {
 .hidden {
   display: none;
 }
+=======
+
+>>>>>>> master

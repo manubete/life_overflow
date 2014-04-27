@@ -15,44 +15,6 @@ describe QuestionsController do
     end
   end
 
-  context "#new" do
-    context "logged in user" do
-      before(:each) do
-         session[:user_id] = 1
-      end
-      it "is successful" do
-        get :new
-        expect(response).to be_success
-      end
-
-      it "shows a create question form if they are logged in" do
-        get :new
-        expect(response).to be_success
-      end
-
-    context " #show" do
-      let!(:question) { FactoryGirl.create :question}
-      let!(:answer) { FactoryGirl.create :answer}
-         it "assigns @answer to the Question found by id" do
-         get :show, {:id => question.id }
-         p "#{assigns(:question)} here"
-         expect(assigns(:answer)).to be_a_new Answer
-      end
-   end
-
-  end
-
-    context "guest user" do
-      before(:each) do
-        session[:user_id] = nil
-      end
-      it "redirects a user to log in page if they are not logged in" do
-        get :new
-        expect(response).to redirect_to root_path
-      end
-    end
-  end
-
   context "#create" do
     context "logged in user" do
       before(:each) do
@@ -65,16 +27,6 @@ describe QuestionsController do
         }.to change { Question.count }.by(1)
       end
     end
-
-    # context "guest user" do
-    #   before(:each) do
-    #      session[:user_id] = nil
-    #   end
-    #   it "is successful" do
-    #     post :create
-    #     expect(response).to redirect_to root_path
-    #   end
-    # end
 
   end
 

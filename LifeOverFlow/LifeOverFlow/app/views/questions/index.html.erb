@@ -1,27 +1,20 @@
 <!-- <h1>Welcome to Life Overflow!</h1> -->
-
-<h2>All questions:</h2>
-<% @questions.each do |question| %>
-  <div class="question">
-    <div class = "question_title">
-      <h2><%= "#{question.question_title}" %></h2>
-    </div>
-    <div class= "question_content">
-      <%= "#{question.question_content}" %>
-    </div>
-    <div class="question_buttons">
-       <div class = "question_button">
-
-        <%= link_to 'Show' , question_path(question) %>
-
-      </div>
-      <div class="question_button">
-        <%= link_to 'Delete' , question_path(question), :method => :delete %>
-      </div>
-    </div>
-  </div>
-<% end %>
+<div id="show_questions">
+  <h2>All questions:</h2>
+  <% @questions.each do |question| %>
+    <%= render 'question', :question => question %>
+  <% end %>
+</div>
 
 <% if current_user %>
-<%= button_to 'Create a Question', new_question_path, :method => :get, :class => "btn btn-success" %><br><br>
+  <%=link_to "Create a Question", "#", :class => 'new_question' %>
 <% end  %>
+<div id="quest_errors">
+
+</div>
+<%= form_for @question, :remote => true, :html => {:class => 'hidden', :class => 'questionform' } do |f| %>
+  <%= f.text_field :question_title, size: "98", placeholder: "Title" %>
+  <br>
+    <%= f.text_area :question_content, size: "100x12", placeholder: "Content" %>
+  <%= f.submit %>
+<% end %>
