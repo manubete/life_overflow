@@ -1,4 +1,7 @@
 <div class="question">
+  <div class="vote_booth">
+     <%= link_to 'UP', question_votes_path(question), class: 'vote question up', data: {id: question.id} %>
+  </div>
   <div class = "question_title">
     <h2><%= "#{question.question_title}" %></h2>
   </div>
@@ -14,3 +17,5 @@
     </div>
   </div>
 </div>
+
+<script>   <%= link_to 'UP', question_votes_path(question), class: 'vote question up', data: {id: question.id} %> </script>

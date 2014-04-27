@@ -25,4 +25,8 @@ FactoryGirl.define do
     comment_content { "Energetic exchange incense reproductive system nectar, change agent harmful electromagnetic fields massage therapist with cayenne pepper infinite blessings om seasonal." }
   end
 
+  factory :vote do
+    type {'up'}
+  end
+
 end

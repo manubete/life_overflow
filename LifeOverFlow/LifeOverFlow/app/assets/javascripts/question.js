@@ -21,6 +21,7 @@ var Question = {
     $('#quest_errors').html('')
     $('#quest_errors').append(xhr.responseText);
   }
+
 }
 
 $(document).ready(function() {
