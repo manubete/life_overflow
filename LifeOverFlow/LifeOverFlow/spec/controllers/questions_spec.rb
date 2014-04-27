@@ -2,10 +2,16 @@ require 'spec_helper'
 
 describe QuestionsController do
   let!(:user) { FactoryGirl.create :user }
+
   context "#index" do
     it "is successful" do
       get :index
       expect(response).to be_success
+    end
+
+    it "loads a list of the Questions" do
+      get :index
+      expect(response).to render_template("index")
     end
   end
 

@@ -10,9 +10,9 @@ var Answers ={
   },
 
   appendAnswer: function(e,data) {
-    console.log("its working");
-    console.log(data);
+    $('form#new_answer')[0].reset()
      $('div#all_answers').append(data);
+     $('form#new_answer').toggleClass('hidden');
   }
 }
 
