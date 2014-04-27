@@ -6,8 +6,10 @@ before_filter :require_login, only: [:new, :create]
   end
 
   def create
+    @user = current_user
     @question = Question.find params[:question_id]
     @answer = @question.answers.build params[:answer]
+    @answer.update_attributes(:user_id => @user.id)
     if @answer.save
       redirect_to question_path(@question)
     else

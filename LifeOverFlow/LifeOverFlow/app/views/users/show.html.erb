@@ -1,5 +1,53 @@
-<h1>Specific User Page</h1>
-<br>
-<%= @user.username %>
+<h1><%= @user.username %>'s Page</h1>
 
-<h2>Specific User Page</h2>
+<h2>Questions You Have Created:</h2>
+
+<% @user_questions.each_with_index do |question, index| %>
+  <div class="question">
+    <div class = "question_title">
+      <h4><%= "#{index+1}: #{question.question_title}" %></h4>
+    </div>
+    <div class="question_buttons">
+       <div class = "question_button">
+        <%= link_to 'Show' , question_path(question) %>
+      </div>
+      <div class="question_button">
+        <%= link_to 'Delete' , question_path(question), :method => :delete %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<h2>Answers You Have Created:</h2>
+<% @user_answers.each_with_index do |answer, index| %>
+  <div class="question">
+    <div class = "question_title">
+      <h4><%= "#{index+1}: #{answer.answer_content}" %></h4>
+    </div>
+    <div class="question_buttons">
+       <div class = "question_button">
+        <%= link_to 'Show Original Question' , question_path(answer.question.id) %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<h2>Comments You Have Created:</h2>
+
+<% @user_comments.each_with_index do |comment, index| %>
+  <div class="question">
+    <div class = "question_title">
+      <h4><%= "#{index+1}: #{comment.comment_content}" %></h4>
+    </div>
+
+      <div class="question_buttons">
+         <div class = "question_button">
+          <% if comment.commentable_type == "Question" %>
+            <%= link_to 'Show Original Question' , question_path(comment.commentable.id) %>
+          <% else %>
+            <%= link_to 'Show Original Question' , question_path(comment.commentable.question_id) %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+<% end %>
