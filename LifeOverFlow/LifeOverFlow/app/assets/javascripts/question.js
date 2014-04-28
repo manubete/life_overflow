@@ -1,13 +1,17 @@
 var Question = {
   init: function() {
     $('a.new_question').on('click',this.toggleQuestionForm);
-    $('form#new_question').on('ajax:success', this.appendQuestion);
-    $('form#new_question').on('ajax:error', this.appendErrors);
+    $('.questionform').on('ajax:success', this.appendQuestion);
+    $('.questionform').on('ajax:error', this.appendErrors);
   },
 
   toggleQuestionForm: function(e) {
     e.preventDefault();
-    $('form#new_question').toggleClass('hidden');
+    if ($('.questionform').is(':hidden')) {
+      $('.questionform').slideDown()
+    } else {
+      $('.questionform').slideUp()
+    }
   },
 
   appendQuestion: function(event, data) {
@@ -25,4 +29,5 @@ var Question = {
 
 $(document).ready(function() {
   Question.init();
+  $('.questionform').hide()
 })

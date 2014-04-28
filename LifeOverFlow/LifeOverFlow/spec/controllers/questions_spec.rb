@@ -2,10 +2,16 @@ require 'spec_helper'
 
 describe QuestionsController do
   let!(:user) { FactoryGirl.create :user }
+
   context "#index" do
     it "is successful" do
       get :index
       expect(response).to be_success
+    end
+
+    it "loads a list of the Questions" do
+      get :index
+      expect(response).to render_template("index")
     end
   end
 
@@ -21,16 +27,6 @@ describe QuestionsController do
         }.to change { Question.count }.by(1)
       end
     end
-
-    # context "guest user" do
-    #   before(:each) do
-    #      session[:user_id] = nil
-    #   end
-    #   it "is successful" do
-    #     post :create
-    #     expect(response).to redirect_to root_path
-    #   end
-    # end
 
   end
 
