@@ -8,7 +8,7 @@
       <li> <%= button_to "Log out", log_out_path, :class => "btn btn-danger", :method => :get %></li>
     <% else %>
       <li> <%= button_to "Sign Up", sign_up_path, :class => "btn btn-success", :method => :get %></li>
-      <li><%= link_to "Log In", log_in_path %></li>
+      <li id="login_btn"><%= link_to "Log In", log_in_path %></li>
     <% end %>
   </ul>
   </div>
