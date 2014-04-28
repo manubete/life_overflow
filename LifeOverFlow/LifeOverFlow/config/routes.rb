@@ -9,9 +9,11 @@ LifeOverFlow::Application.routes.draw do
   resources :questions do
     resources :answers
   end
+resources :questions, :comments, :answers do
+  resources :votes
+end
 
   resources :comments
-
   resources :users
   resources :sessions
 end

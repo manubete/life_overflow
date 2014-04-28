@@ -1,6 +1,5 @@
 FactoryGirl.define do
 
-
   factory :user do
     username { "ashwizzle24" }
     email { "ash.nkumar@gmail.com" }
@@ -23,6 +22,11 @@ FactoryGirl.define do
 
   factory :comment do
     comment_content { "Energetic exchange incense reproductive system nectar, change agent harmful electromagnetic fields massage therapist with cayenne pepper infinite blessings om seasonal." }
+  end
+
+  factory :vote do
+    vote_type {'up'}
+    question
   end
 
 end

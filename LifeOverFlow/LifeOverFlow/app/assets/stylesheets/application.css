@@ -216,3 +216,33 @@ body {
   display: none;
 }
 
+/*--------------------------- VOTES ON QUESTIONS ------------------*/
+
+.votes_container {
+  vertical-align: top;
+  display: inline-block;
+  width: 15%;
+}
+
+.vote_booth {
+  display: inline-block;
+  width: 45%;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.vote_count {
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+  padding: 5px;
+  margin: 6px 0;
+  font-size: 2.2em;
+}
+
+.question-content {
+  display: inline-block;
+  width: 80%;
+  padding: 0 17px;
+}
