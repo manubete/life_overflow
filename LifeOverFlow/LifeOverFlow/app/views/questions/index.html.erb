@@ -2,7 +2,7 @@
 <div id="show_questions">
   <h2>All questions:</h2>
   <% @questions.each do |question| %>
-    <%= render 'question', :question => question %>
+    <%= render 'questions/question', :question => question %>
   <% end %>
 </div>
 
@@ -14,8 +14,8 @@
 
 </div>
 <%= form_for @question, :remote => true, :html => {:class => 'hidden', :class => 'questionform' } do |f| %>
-  <%= f.text_field :question_title, size: "98", placeholder: "Title" %>
+  <%= f.text_field :question_title, size: "100%", placeholder: "Title" %>
   <br>
-    <%= f.text_area :question_content, size: "100x12", placeholder: "Content" %>
+    <%= f.text_area :question_content, size: "100% x 15%", placeholder: "Content" %>
   <%= f.submit %>
 <% end %>

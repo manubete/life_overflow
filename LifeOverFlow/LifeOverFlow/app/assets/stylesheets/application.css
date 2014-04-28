@@ -106,18 +106,25 @@ body {
 .all_questions p {
 
 }
-.question_buttons {
+.question_buttons a {
+  padding: 5px;
+  margin: 5px;
+  background-color: pink;
+  border-radius: 100px;
+}
+#show_questions {
   padding: 5px;
   margin: 5px;
 }
-#show_question {
-  border: 1px black solid;
-  margin: 5px;
-}
-#show_question h3 {
+#show_questions h2 {
+  text-decoration: underline;
+  text-align: center;
 
 }
-#show_question p {
+#show_questions h3 {
+
+}
+#show_questions p {
 
 }
 .questionform input {
