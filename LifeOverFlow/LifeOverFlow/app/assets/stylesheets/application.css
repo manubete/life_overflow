@@ -97,19 +97,13 @@ body {
 
 
 /*--------------------------- USERS ------------------*/
-#signup_form {
-
+.show_user h1 {
+  color:#03899C;
+  text-align: center;
+  margin-bottom: 30px
 }
-.error_messages{
-
-}
-.error_messages h2 {
-
-}
-.sign_up_fields {
-
-}
-#login_form {
+.show_user h3 {
+  border-bottom: 1px dotted orange;
 
 }
 /*--------------------------- QUESTIONS ------------------*/
