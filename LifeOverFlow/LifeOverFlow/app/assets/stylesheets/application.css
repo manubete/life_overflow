@@ -164,12 +164,6 @@ body {
 }
 
 /*--------------------------- ANSWERS ------------------*/
-#all_answers {
-}
-#all_answers h4 {
-
-}
-
 #answer_content {
   padding: 5px;
   margin-bottom: 5px;
@@ -177,27 +171,7 @@ body {
   font-size: large;
   border-radius: 5px;
 }
-#create-answer {
-
-}
-#create-answer h1 {
-
-}
-#create-answer p {
-
-}
-
 /*--------------------------- COMMENTS ON QUESTIONS ------------------*/
-#create-ques-comment {
-
-}
-#create-ques-comment h4 {
-
-}
-#create-ques-comment p {
-
-}
-
 .comment {
   padding: 5px;
   margin: 5px 10px;
