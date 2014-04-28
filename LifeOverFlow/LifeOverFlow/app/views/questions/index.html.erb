@@ -1,3 +1,11 @@
+<div class="text-center">
+    <em>Order by:</em>
+    <div class="btn-group">
+      <span id="upVotes"><%= link_to "UpVotes",{:controller => "questions" , :action => "index", :upVotes => true }, :remote => true %></span><br>
+      <span id="recent"><%= link_to "Most Recent", {:controller => "questions" , :action => "index", :recent => true }, :remote => true  %></span>
+    </div>
+  </div>
+
 
 <div id="show_questions">
   <h2>All questions:</h2><br>
