@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140426232539) do
+ActiveRecord::Schema.define(:version => 20140427025155) do
 
   create_table "answers", :force => true do |t|
     t.string  "answer_content"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20140426232539) do
     t.string "email"
     t.string "password_hash"
     t.string "password_salt"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.string   "type"
+    t.integer  "voteable_id"
+    t.string   "voteable_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

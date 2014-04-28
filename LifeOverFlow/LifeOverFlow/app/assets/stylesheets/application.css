@@ -1,4 +1,8 @@
+
+/* --------- bootstrap stuff for the layout page -------------- */
+
 /*--------------------------- BOOTSTRAP ------------------*/
+
 
 body {
   overflow: hidden;
@@ -59,6 +63,9 @@ body {
   color: white;
 }
 
+
+/* --------- CUSTOM STUFF -------------- */
+
 /* OUR CSS */
 
 /*--------------------------- GENERAL CSS ------------------*/
@@ -114,10 +121,13 @@ body {
 
 /*--------------------------- ANSWERS ------------------*/
 #all_answers {
-
 }
 #all_answers h4 {
 
+}
+
+#answer_content{
+  background-color: #E9967A
 }
 #create-answer {
 
@@ -148,7 +158,16 @@ body {
 }
 .answer_comment {
  padding: 2px;
- border: 1px solid black;
+
  margin: 5px;
+}
+
+
+#show_question {
+  border: 1px black solid;
+}
+
+.hidden {
+  display: none;
 }
 
