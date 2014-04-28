@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20140427025155) do
   end
 
   create_table "votes", :force => true do |t|
+
     t.string   "vote_type"
     t.integer  "voteable_id"
     t.string   "voteable_type"

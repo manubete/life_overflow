@@ -9,7 +9,7 @@ describe "User can post a answer" do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
 
       visit question_path(:id => question.id)
-      click_on 'Create an Answer'
+      click_on 'New Answer'
       fill_in 'answer[answer_content]', with: answer.answer_content
       click_on 'Submit'
       expect(page).to have_content answer.answer_content
