@@ -91,6 +91,10 @@ body {
   text-decoration: none;
 }
 
+#user_btn{
+  text-align: center;
+}
+
 
 /*--------------------------- USERS ------------------*/
 #signup_form {
