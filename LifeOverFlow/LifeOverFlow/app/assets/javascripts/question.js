@@ -3,6 +3,21 @@ var Question = {
     $('a.new_question').on('click',this.toggleQuestionForm);
     $('.questionform').on('ajax:success', this.appendQuestion);
     $('.questionform').on('ajax:error', this.appendErrors);
+    $('#recent').on('ajax:success', this.sortQByRecent);
+    $('#upVotes').on('ajax:success', this.sortQByUpVotes);
+  },
+  sortQByUpVotes: function(e,data){
+   console.log("VOTED SHIT")
+    $('div.question').remove()
+    $('div#show_questions').append(data).hide().fadeIn(1300)
+    Vote.init();
+  },
+
+  sortQByRecent: function(e,data) {
+    console.log("RECENT SHIT")
+    $('div.question').remove()
+    $('div#show_questions').append(data).hide().fadeIn(1300)
+    Vote.init();
   },
 
 

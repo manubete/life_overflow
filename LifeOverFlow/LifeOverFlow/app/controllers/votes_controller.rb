@@ -10,7 +10,6 @@ def create
     @vote_total = question.votes_total
     @vote_total
     render json: @vote_total.to_json
-    # render :partial => 'vote_total', :locals => {:votes_total => @votes_total}
   else
     @errors = @vote.errors.full_messages
   end
