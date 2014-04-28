@@ -1,10 +1,9 @@
 <div class="question">
-  <div class = "question_title">
-    <h3><%= "#{question.question_title}" %></h3>
-  </div>
+  <span class = "question_title"><h3><%= "#{question.question_title}" %></h3></span>
+
   <div class="question_buttons">
-     <div class = "question_button">
-      <%= link_to 'Show' , question_path(question) %>
-    </div>
+      <span class ="q_btn"><%= link_to 'Show' , question_path(question) %></span>
+      <span class "question_timestamp"><%= "#{question.updated_at}" %></span>
+      <span>Created by: <%= link_to "#{question.user.username}", user_path(question.user.id) %></span>
   </div>
 </div>

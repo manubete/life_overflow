@@ -16,17 +16,18 @@ body {
   padding: 10px;
   margin-top: 10px;
   position: relative;
-  background-color: #b3b3b3;
+  background-color: #FFB240;
   z-index: 10;
   border-radius:15px;
 }
 .main_container {
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 2%;
   height: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #e6e6e6;
+  background-color: #FFDD73;
   border-radius:15px;
 }
 .header img {
@@ -68,11 +69,28 @@ body {
 /* OUR CSS */
 
 /*--------------------------- GENERAL CSS ------------------*/
-.submit-button{
+#user_nav a {
+  padding: 8px;
+  color: #FFB240;
+  background-color: white;
+  border-radius: 5px ;
 }
+
 .hidden {
   display: none;
 }
+
+#footer {
+  margin: 5px auto;
+  text-align: center;
+  padding: 5px;
+  font-size: smaller;
+}
+#footer a {
+  color: black;
+  text-decoration: none;
+}
+
 
 /*--------------------------- USERS ------------------*/
 #signup_form {
@@ -100,20 +118,45 @@ body {
 .all_questions p {
 
 }
-.question_buttons {
-  padding: 5px;
-  margin: 5px;
+.question_buttons span {
+  margin: 10px;
+  display: inline;
 }
+
+.question_buttons span {
+  margin: 10px;
+  display: inline;
+}
+
+.question_buttons a {
+  padding: 5px;
+  color: white;
+  background-color: #FFB240;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.question_buttons a:hover {
+  background-color: #0772A1;
+  color: #FFB240;
+  text-decoration: none;
+}
+
 #show_question {
   border: 1px black solid;
   padding: 15px;
 }
-#show_question h3 {
 
+#show_questions {
+  padding: 5px;
+  margin: 5px;
 }
-#show_question p {
 
+#show_questions h2 {
+  text-decoration: underline;
+  text-align: center;
 }
+
 .questionform input {
   margin: 9px 0;
 }

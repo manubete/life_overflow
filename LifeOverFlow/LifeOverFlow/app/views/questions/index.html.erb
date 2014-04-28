@@ -1,8 +1,8 @@
-<!-- <h1>Welcome to Life Overflow!</h1> -->
+
 <div id="show_questions">
   <h2>All questions:</h2><br>
   <% @questions.each do |question| %>
-    <%= render 'question', :question => question %>
+    <%= render 'questions/question', :question => question %>
   <% end %>
 </div>
 
