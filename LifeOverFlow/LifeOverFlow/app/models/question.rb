@@ -1,3 +1,5 @@
+require 'date'
+
 class Question < ActiveRecord::Base
   attr_accessible :question_content, :question_title, :user_id
 
@@ -13,6 +15,5 @@ class Question < ActiveRecord::Base
     total_down_votes = self.votes.find_all_by_vote_type('down').count
     votes_total = total_up_votes - total_down_votes
   end
-
 end
 

@@ -20,6 +20,7 @@ var Question = {
     Vote.init();
   },
 
+
   toggleQuestionForm: function(e) {
     e.preventDefault();
     if ($('.questionform').is(':hidden')) {

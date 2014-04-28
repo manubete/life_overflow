@@ -4,7 +4,7 @@
 
   <ul class="nav nav-pills nav-stacked">
     <% if current_user %>
-      <li> <%= link_to "#{current_user.username}", user_path(current_user.id) %></li>
+      <li id="user_btn"> <%= link_to "#{current_user.username}", user_path(current_user.id) %></li>
       <li> <%= button_to "Log out", log_out_path, :class => "btn btn-danger", :method => :get %></li>
     <% else %>
       <li> <%= button_to "Sign Up", sign_up_path, :class => "btn btn-success", :method => :get %></li>
