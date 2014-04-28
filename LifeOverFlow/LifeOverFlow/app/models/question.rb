@@ -15,9 +15,5 @@ class Question < ActiveRecord::Base
     total_down_votes = self.votes.find_all_by_vote_type('down').count
     votes_total = total_up_votes - total_down_votes
   end
-
-  t = Time.new
-  DateTime.strptime(t,'%s').strftime("%d %m %y")
-
 end
 
