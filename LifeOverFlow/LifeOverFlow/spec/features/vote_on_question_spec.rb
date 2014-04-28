@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "A User can vote", :js => true do
+describe "A User can vote" do
   context "a signed in user can" do
     let(:question) {FactoryGirl.create :question}
     let!(:user) {FactoryGirl.create :user}
@@ -11,8 +11,6 @@ describe "A User can vote", :js => true do
           fill_in 'question[question_title]', :with => question[:question_title]
           fill_in 'question[question_content]', :with => question[:question_content]
           click_on "Create Question"
-          sleep(3)
-
           click_on "UP"
           expect(body).to have_content ("1")
       end
