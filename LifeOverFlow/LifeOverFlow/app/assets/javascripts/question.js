@@ -5,6 +5,7 @@ var Question = {
     $('.questionform').on('ajax:error', this.appendErrors);
   },
 
+
   toggleQuestionForm: function(e) {
     e.preventDefault();
     if ($('.questionform').is(':hidden')) {
