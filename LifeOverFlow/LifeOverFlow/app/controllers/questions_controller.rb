@@ -5,6 +5,14 @@ before_filter :require_login, only: [:new, :create]
     @questions = Question.all
     @question = Question.new
     @answer = Answer.new
+    if params[:recent]
+      @questions = Question.order(:created_at)
+      render :partial => 'questions', :locals => {:questions => @questions}
+    end
+    if params[:upVotes]
+        @questions = @questions.sort {|q1,q2| q2.votes_total <=> q1.votes_total}
+        render :partial => 'questions', :locals => {:questions => @questions}
+    end
   end
 
   def show
