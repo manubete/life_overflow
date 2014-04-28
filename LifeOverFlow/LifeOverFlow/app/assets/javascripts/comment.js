@@ -22,7 +22,6 @@ var Comment = {
     var answer_form = $(this.nextElementSibling)
 
     if (answer_form.is(':hidden')) {
-      console.log("BOOYAO")
       answer_form.slideDown()
     } else {
       answer_form.slideUp()
@@ -38,7 +37,7 @@ var Comment = {
   appendAnswerComment: function(event, data) {
     $('.answerCommentForm').hide()
     $('.answerCommentForm')[0].reset();
-    $('#show_answer_comments').append(data);
+    $('.answer_comments').append(data);
   },
 
   appendErrors: function(event, xhr, status, error) {
