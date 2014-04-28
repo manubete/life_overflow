@@ -2,10 +2,11 @@
   <h2><%= @question.question_title %></h2>
   <p><%= @question.question_content %></p>
 </div>
+
 <div class="question-comments">
   <div id="show_question_comments">
     <% @question.comments.each do |comment| %>
-      <div class="comment"><%= comment.comment_content %></div>
+      <div class="comment"><%= comment.comment_content %> - <%= link_to "#{comment.user.username}", user_path(comment.user.id) %></div>
     <% end %>
   </div>
   <%= link_to "Comment on This Question", "#", :class => 'new_comment_on_question' %>

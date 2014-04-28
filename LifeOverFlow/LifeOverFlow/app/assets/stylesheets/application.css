@@ -147,7 +147,6 @@ body {
 }
 
 #show_question {
-  border: 1px black solid;
   padding: 15px;
 }
 
@@ -197,7 +196,10 @@ body {
 }
 
 .comment {
-  background-color: teal;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+  border-bottom: 1px dotted orange;
 }
 
 /*--------------------------- COMMENTS ON ANSWERS ------------------*/
@@ -209,11 +211,6 @@ body {
 .answer_comment {
  padding: 2px;
  margin: 5px;
-}
-
-
-#show_question {
-  border: 1px black solid;
 }
 
 .hidden {
