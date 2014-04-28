@@ -1,9 +1,22 @@
 <div class="question">
-  <span class = "question_title"><h3><%= "#{question.question_title}" %></h3></span>
+  <div class= "votes_container">
+      <div class = "vote_count">
+        <%= question.votes_total %>
+      </div>
+      <div class="vote_booth">
+      <%= link_to 'UP', question_votes_path(question, vote_type: "up", voteable_type: "Question", voteable_id: question.id), remote: true, method: :post, class: "vote" %>
+      <%= link_to 'DOWN', question_votes_path(question, vote_type: "down", voteable_type: "Question",voteable_id: question.id), remote: true, method: :post, class: "vote"  %>
+    </div>
+  </div>
+  <div class = "question-content">
 
-  <div class="question_buttons">
-      <span class ="q_btn"><%= link_to 'Show' , question_path(question) %></span>
-      <span class "question_timestamp"><%= time_ago_in_words(@question.created_at) "#{question.created_at}" %></span>
-      <span>Created by: <%= link_to "#{question.user.username}", user_path(question.user.id) %></span>
+    <span class = "question_title"><h3><%= "#{question.question_title}" %></h3></span>
+
+    <div class="question_buttons">
+        <span class ="q_btn"><%= link_to 'Show' , question_path(question) %></span>
+        <span class "question_timestamp"><%= "#{question.updated_at}" %></span>
+        <span>Created by: <%= link_to "#{question.user.username}", user_path(question.user.id) %></span>
+    </div>
   </div>
 </div>
+
