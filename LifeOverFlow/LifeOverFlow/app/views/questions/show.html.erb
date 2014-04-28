@@ -43,7 +43,7 @@
     <div class="show_answer">
       <div id = "answer_content">
 
-        <%= answer.answer_content %>
+        <%= answer.answer_content %> - <%= link_to "#{answer.user.username}", user_path(answer.user.id) %>
       </div>
       <%= link_to "Comment on Answer", '#', :class => 'new_comment_on_answer' %>
       <%= form_for @comment, :remote => true, :html => {:class => 'answerCommentForm'} do |f| %>
@@ -58,7 +58,7 @@
 
       <div class="answer_comments">
          <% answer.comments.each do |comment| %>
-          <span class="answer_comment"><%= comment.comment_content %></span><br>
+          <div class="answer_comment"><%= comment.comment_content %> - <%= link_to "#{comment.user.username}", user_path(comment.user.id) %></div>
          <% end %>
       </div><br><br><br>
 
