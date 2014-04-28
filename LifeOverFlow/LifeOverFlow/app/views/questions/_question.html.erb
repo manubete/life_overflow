@@ -3,7 +3,7 @@
 
   <div class="question_buttons">
       <span class ="q_btn"><%= link_to 'Show' , question_path(question) %></span>
-      <span class "question_timestamp"><%= "#{question.updated_at}" %></span>
+      <span class "question_timestamp"><%= time_ago_in_words(@question.created_at) "#{question.created_at}" %></span>
       <span>Created by: <%= link_to "#{question.user.username}", user_path(question.user.id) %></span>
   </div>
 </div>
