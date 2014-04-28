@@ -7,10 +7,12 @@ def create
   @vote = Vote.new(vote_params)
   if @vote.save
     question = Question.find(@vote.voteable_id)
-   puts "Here are the votes total #{question.votes_total}"
-    question.votes_total
+    @vote_total = question.votes_total
+    @vote_total
+    render json: @vote_total.to_json
+    # render :partial => 'vote_total', :locals => {:votes_total => @votes_total}
   else
-    @vote.errors.full_messages
+    @errors = @vote.errors.full_messages
   end
 end
 
