@@ -15,6 +15,7 @@ var Question = {
     $('form#new_question')[0].reset()
     $('#show_questions').append(data);
     $('form#new_question').toggleClass('hidden');
+    Vote.init();
   },
 
   appendErrors: function(event, xhr, status, error) {
