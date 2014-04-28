@@ -1,19 +1,18 @@
 
 <div id="show_questions">
-  <h2>All questions:</h2>
+  <h2>All questions:</h2><br>
   <% @questions.each do |question| %>
     <%= render 'questions/question', :question => question %>
   <% end %>
 </div>
 
-
 <% if current_user %>
-<%=link_to "Create a Question", "#", :class => 'new_question' %>
+  <%=link_to "Create a Question", "#", :class => 'new_question' %>
 <% end  %>
 <div id="quest_errors">
 
 </div>
-<%= form_for @question, :remote => true, :html => {:class => 'hidden', :class => 'questionform' } do |f| %>
+<%= form_for @question, :remote => true, :html => {:class => 'questionform' } do |f| %>
   <%= f.text_field :question_title, size: "98", placeholder: "Title" %>
   <br>
     <%= f.text_area :question_content, size: "100x12", placeholder: "Content" %>

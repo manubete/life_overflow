@@ -1,28 +1,66 @@
 <div id="show_question">
-<h1><%= @question.question_title %></h1>
-<p><%= @question.question_content %></p>
+  <h2><%= @question.question_title %></h2>
+  <p><%= @question.question_content %></p>
 </div>
 <div class="question-comments">
-  <% @question.comments.each do |comment| %>
-   <div class="comment"><%= comment.comment_content %></div>
-  <%  end %>
-  <%= link_to "Create a Comment", new_comment_path(:question_id => @question.id) %>
+  <div id="show_question_comments">
+    <% @question.comments.each do |comment| %>
+      <div class="comment"><%= comment.comment_content %></div>
+    <% end %>
+  </div>
+  <%= link_to "Comment on This Question", "#", :class => 'new_comment_on_question' %>
+  <div id="comment_question_errors">
+
+<%= form_for @comment, :remote => true, :html => {:class => 'questionCommentForm'} do |f| %>
+    <%= f.label :comment_content %>
+    <%= f.text_field :comment_content %>
+    <br>
+    <%= f.hidden_field :commentable_id, value: @question.id%>
+    <%= f.hidden_field :commentable_type, value: "Question" %>
+    <%= f.submit "Add Comment" %>
+<% end %>
+  <br>
 </div>
 
 <% if current_user %>
-  <%= button_to "Create an Answer", new_question_answer_path(@question), :method => :get, :class => "btn btn-warning" %>
+  <%= link_to 'New Answer', '#', :class =>'new-answer'  %>
+
+  <div id="answer-question">
+    <%= form_for [@question, @answer], remote: true, :html => {:class => 'hidden'} do |f| %>
+    <%= f.label :answer_content %>
+    <%= f.text_field :answer_content %>
+    <%= f.submit "Submit" %>
+    <% end %>
+ </div>
+
 <% end  %><br>
+
+
 <div id="all_answers">
-  <h4>Answers</h4>
+  <h4><%= @question.answers.count %> Answers</h4>
   <% @question.answers.each do |answer| %>
     <div class="show_answer">
-      <span><%= answer.answer_content %></span>
-      <%= link_to "Comment on Answer", new_comment_path(:answer_id => answer.id) %>
+      <div id = "answer_content">
+
+        <%= answer.answer_content %>
+      </div>
+      <%= link_to "Comment on Answer", '#', :class => 'new_comment_on_answer' %>
+      <%= form_for @comment, :remote => true, :html => {:class => 'answerCommentForm'} do |f| %>
+            <%= f.label :comment_content %>
+            <%= f.text_field :comment_content %>
+            <br>
+            <%= f.hidden_field :commentable_id, value: answer.id%>
+            <%= f.hidden_field :commentable_type, value: "Answer" %>
+            <%= f.submit "Add Comment" %>
+      <% end %>
+      <div id="show_answer_comments">
+
       <div class="answer_comments">
          <% answer.comments.each do |comment| %>
-          <span class="answer_comment"><%= comment.comment_content %></span>
+          <span class="answer_comment"><%= comment.comment_content %></span><br>
          <% end %>
-      </div>
+      </div><br><br><br>
+
     </div>
   <% end %>
 </div>
