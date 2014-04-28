@@ -1,16 +1,10 @@
 <div class="question">
   <div class = "question_title">
-    <h2><%= "#{question.question_title}" %></h2>
-  </div>
-  <div class= "question_content">
-    <%= "#{question.question_content}" %>
+    <h3><%= "#{question.question_title}" %></h3>
   </div>
   <div class="question_buttons">
      <div class = "question_button">
       <%= link_to 'Show' , question_path(question) %>
-    </div>
-    <div class="question_button">
-      <%= link_to 'Delete' , question_path(question), :method => :delete %>
     </div>
   </div>
 </div>

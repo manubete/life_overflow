@@ -1,7 +1,6 @@
-
 <div id="show_question">
-<h1><%= @question.question_title %></h1>
-<p><%= @question.question_content %></p>
+  <h2><%= @question.question_title %></h2>
+  <p><%= @question.question_content %></p>
 </div>
 <div class="question-comments">
   <div id="show_question_comments">
@@ -24,7 +23,7 @@
 </div>
 
 <% if current_user %>
-  <%= link_to 'new answer', '#', :class =>'new-answer'  %>
+  <%= link_to 'New Answer', '#', :class =>'new-answer'  %>
 
   <div id="answer-question">
     <%= form_for [@question, @answer], remote: true, :html => {:class => 'hidden'} do |f| %>
@@ -44,7 +43,7 @@
       <div id = "answer_content">
 
         <%= answer.answer_content %>
-      </div><br>
+      </div>
       <%= link_to "Comment on Answer", '#', :class => 'new_comment_on_answer' %>
       <%= form_for @comment, :remote => true, :html => {:class => 'answerCommentForm'} do |f| %>
             <%= f.label :comment_content %>
@@ -60,7 +59,7 @@
          <% answer.comments.each do |comment| %>
           <span class="answer_comment"><%= comment.comment_content %></span><br>
          <% end %>
-      </div>
+      </div><br><br><br>
 
     </div>
   <% end %>

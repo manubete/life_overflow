@@ -5,7 +5,6 @@
 
 
 body {
-  overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -63,9 +62,9 @@ body {
   color: white;
 }
 
-<<<<<<< HEAD
+
 /* --------- CUSTOM STUFF -------------- */
-=======
+
 /* OUR CSS */
 
 /*--------------------------- GENERAL CSS ------------------*/
@@ -107,7 +106,7 @@ body {
 }
 #show_question {
   border: 1px black solid;
-  margin: 5px;
+  padding: 15px;
 }
 #show_question h3 {
 
@@ -150,18 +149,21 @@ body {
 
 }
 
+.comment {
+  background-color: teal;
+}
+
 /*--------------------------- COMMENTS ON ANSWERS ------------------*/
 
 .answer_comments {
   padding: 5px;
   background-color: #E0EEEE;
 }
-
 .answer_comment {
  padding: 2px;
-
  margin: 5px;
 }
+
 
 #show_question {
   border: 1px black solid;
@@ -170,3 +172,4 @@ body {
 .hidden {
   display: none;
 }
+
