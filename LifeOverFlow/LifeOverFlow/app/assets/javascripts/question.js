@@ -10,12 +10,14 @@ var Question = {
    console.log("VOTED SHIT")
     $('div.question').remove()
     $('div#show_questions').append(data).hide().fadeIn(1300)
+    Vote.init();
   },
 
   sortQByRecent: function(e,data) {
     console.log("RECENT SHIT")
     $('div.question').remove()
     $('div#show_questions').append(data).hide().fadeIn(1300)
+    Vote.init();
   },
 
   toggleQuestionForm: function(e) {
